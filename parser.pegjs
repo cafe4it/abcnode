@@ -107,13 +107,14 @@ other_fields
  }
  /
  "Q:" _ t:tempo {
-    return t;
+    return ["tempo", t];
  }
 
-tempo = integer+ / ("C" note_length? "=" integer+) / (note_length_strict "=" integer+)
+tempo = (l:(note_length_strict_ws*) "="* b:integer?) { if(!l.length) l = "1/4"; return { "note_length": l, "bpm": b } }
 meter = "C" / "C|" / meter_fraction
 meter_fraction     = l:(integer+ "/" integer+) { return l.join("") }
 note_length_strict = l:(integer+ "/" integer+) { return l.join("") }
+note_length_strict_ws = l:(integer+ "/" integer+) whitespace* { return l.join("") }
 note_length = (integer+)? ("/" (integer+))?
 parts = part_spec+
 part_spec = (part / ( "(" part_spec+ ")" ) ) integer+
