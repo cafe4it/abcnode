@@ -3,7 +3,13 @@
   "id": "abcnode",
   "version": "0.0.2",
   "description": "ABC notation parser for JavaScript",
-  "keywords": [ "abc", "music", "notation", "parser", "json" ],
+  "keywords": [
+    "abc",
+    "music",
+    "notation",
+    "parser",
+    "json"
+  ],
   "author": "Sergi Mansilla <sergi.mansilla@gmail.com> (http://sergimansilla.com)",
   "homepage": "https://github.com/sergi/abcnode",
   "repository": {
@@ -17,9 +23,9 @@
     "pegjs": "0.7.0"
   },
   "devDependencies": {
-      "jake": "0.3.*",
-      "uglify-js": ">=1.2",
-      "coffee-script": ">=1.0.0"
+    "jake": "0.3.*",
+    "uglify-js": ">=1.2",
+    "coffee-script": ">=1.0.0"
   },
   "main": "./index.js",
   "engines": {
@@ -28,8 +34,10 @@
   "scripts": {
     "test": "node test/test_parser.js"
   },
-  "licenses": [{
-    "type" : "MIT",
-    "url" : "https://github.com/sergi/ABCParser/blob/master/LICENSE"
-  }]
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/sergi/ABCParser/blob/master/LICENSE"
+    }
+  ]
 }
