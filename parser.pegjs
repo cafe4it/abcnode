@@ -71,7 +71,6 @@ header
 abc_version
  = '%abc-' _? major:integer _ '.' _ minor:integer _ { return { major: major, minor: minor } }
 
-
 reference_number
  = 'X:' _? value:integer _ { return value }
 
