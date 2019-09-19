@@ -56,7 +56,7 @@ start
 
 // Header definition and fields
 header
- = refnum:reference_number? title:title+ pairs:(other_fields _)* k:(key _) {
+ = version: abc_version? refnum:reference_number? title:title+ pairs:(other_fields _)* k:(key _) {
     var p = {
         refnum: refnum || 1, // Fallback to 1 for songs that don't include one
         title:  title[0],
@@ -67,6 +67,10 @@ header
     }
     return p;
 }
+
+abc_version
+ = '%abc-' _? major:integer _ '.' _ minor:integer _ { return { major: major, minor: minor } }
+
 
 reference_number
  = 'X:' _? value:integer _ { return value }
